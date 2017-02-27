@@ -1,17 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-<h1>Categoria {{category.name}}</h1>
+{% extends "index.html" %}
+{% block contenido %}
+<h1 class="post text-center"> Categoria {{category.name}}</h1>
 {% if posts %}
 	{% for post in posts %}
-	<li><a href="/posts/view/{{ post.id }}">{{ post.title }}</a></li>
+		<div class="row">
+		<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="well">
+					<h2 class="text-center">{{ post.title }}</h2>
+					<p class="text-center">{{ post.introduction }}</p>
+					<p><a class="btn btn-primary" href="/posts/view/{{ post.id }}"> Seguir leyendo »</a></p>
+				</div>
+			</div>
+		<div class="col-md-2"></div>
+		</div>
 	{% endfor %}
 {% else %}
-<li>No hay posts!</li>
+<div class="row">
+<div class="col-md-2"></div>
+	<div class="col-md-8">
+		<div class="well">
+			<h2 class="text-center">No hay posts! :( Pronto voy a poner algo!</h2>
+		</div>
+	</div>
+<div class="col-md-2"></div>
+</div>
 {% endif %}
-</body>
-</html>
+{% endblock %}

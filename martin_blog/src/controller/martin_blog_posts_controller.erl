@@ -28,5 +28,4 @@ view('GET', [Post_id]) ->
 			catch
 				_:_ -> []
 			end,
-	erlang:display("entre acaaa"),
 	{ok, [{categories, Categories}, {post, Post_resp}]}.

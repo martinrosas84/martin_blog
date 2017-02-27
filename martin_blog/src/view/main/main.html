@@ -2,40 +2,36 @@
 {% block contenido %}
 <div class="row">
 	<div class="col-md-12">
-		<div class="jumbotron well">
-			<h2>
+		<div class="well">
+			<h2 class="presentation">
 				Presentación
 			</h2>
-			<p> Esta es mi adorable presentación.</p>
+			<p class="presentation"> Esta es mi adorable presentación.</p>
 		</div>
 	</div>
 </div>
-<div class="row">
-	<div class="col-md-12">
-		<h3 class="text-center"> Post fijos:</h3>
+<div class="well">
+	<h3 class="text-center"> Lectura obligatoria:</h3>
+	<div class="row">
+	{% for post in pinned_posts %}
+		<div class="col-md-4">
+			<h2>{{ post.title }}</h2>
+			<p>{{ post.introduction }}</p>
+			<p><a class="btn btn-primary" href="/posts/view/{{ post.id }}"> Seguir leyendo »</a></p>
+		</div>
+	{% endfor %}
 	</div>
 </div>
-<div class="row">
-{% for post in pinned_posts %}
-	<div class="col-md-4">
-		<h2>{{ post.title }}</h2>
-		<p>{{ post.introduction }}</p>
-		<p><a class="btn" href="/posts/view/{{ post.id }}">Seguir leyendo »</a></p>
+<div class="well">
+	<h3 class="text-center"> Últimos posts:</h3>
+	<div class="row">
+	{% for post in new_posts %}
+		<div class="col-md-4">
+			<h2>{{ post.title }}</h2>
+			<p>{{ post.introduction }}</p>
+			<p><a class="btn btn-primary" href="/posts/view/{{ post.id }}"> Seguir leyendo »</a></p>
+		</div>
+	{% endfor %}
 	</div>
-{% endfor %}
-</div>
-<div class="row">
-	<div class="col-md-12">
-		<h3 class="text-center"> Nuevos posts:</h3>
-	</div>
-</div>
-<div class="row">
-{% for post in new_posts %}
-	<div class="col-md-4">
-		<h2>{{ post.title }}</h2>
-		<p>{{ post.introduction }}</p>
-		<p><a class="btn" href="/posts/view/{{ post.id }}">Seguir leyendo »</a></p>
-	</div>
-{% endfor %}
 </div>
 {% endblock %}
