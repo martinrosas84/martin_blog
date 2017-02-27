@@ -8,7 +8,7 @@
 <h1>Categoria {{category.name}}</h1>
 {% if posts %}
 	{% for post in posts %}
-	<li>{{ post.title }}</li>
+	<li><a href="/posts/view/{{ post.id }}">{{ post.title }}</a></li>
 	{% endfor %}
 {% else %}
 <li>No hay posts!</li>

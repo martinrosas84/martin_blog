@@ -6,7 +6,7 @@
 
 category('GET', [Category_id]) ->
 %% 	CUALQUIERA!!!
-	[_, IId] = string:tokens(Category_id, "-"),
+	IId = common_funcs:tokenizer(Category_id),
 	Category = boss_db:find(Category_id),
 	Categories = boss_db:find(category, []),
 	Posts_resp = case boss_db:find(post, [{category_id, 'equals', IId}]) of
@@ -22,10 +22,11 @@ category('GET', [Category_id]) ->
 view('GET', [Post_id]) ->
 	Categories = boss_db:find(category, []),
 	Post_resp = try case boss_db:find(Post_id) of
-						{error, Error} -> [];
-						Post -> Post
+					{error, Error} -> [];
+					Post -> Post
 				end
 			catch
 				_:_ -> []
 			end,
+	erlang:display("entre acaaa"),
 	{ok, [{categories, Categories}, {post, Post_resp}]}.
