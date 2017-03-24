@@ -1,6 +1,6 @@
 
 .post {
-	color: white;
+	color: #cccccc;
 }
 
 .presentation {
@@ -11,12 +11,21 @@
 	color: white;
 }
 
+.post_box {
+	background-color: #292929;
+	color: #cccccc;
+}
+
+.margin_post {
+	margin: 10px;
+}
+
 a {
 	color: #8FEAFF;
 }
 
 .container {
-	background-color: #0A0A0D;
+	background-color: #1f1f1f;
 	-webkit-box-shadow: 10px 10px 17px -4px rgba(0,0,0,0.75);
 	-moz-box-shadow: 10px 10px 17px -4px rgba(0,0,0,0.75);
 	box-shadow: 10px 10px 17px -4px rgba(0,0,0,0.75);

@@ -10,28 +10,32 @@
 		</div>
 	</div>
 </div>
-<div class="well">
-	<h3 class="text-center"> Lectura obligatoria:</h3>
+<div class="row">
+	<div class="col-md-12 margin_post">
+	<h3 class="text-center" style="color: #cccccc"> Lectura obligatoria:</h3>
 	<div class="row">
 	{% for post in pinned_posts %}
-		<div class="col-md-4">
-			<h2>{{ post.title }}</h2>
+		<div class="col-md-4 post_box">
+			<h3>{{ post.title }}</h3>
 			<p>{{ post.introduction }}</p>
 			<p><a class="btn btn-primary" href="/posts/view/{{ post.id }}"> Seguir leyendo »</a></p>
 		</div>
 	{% endfor %}
 	</div>
+	</div>
 </div>
-<div class="well">
-	<h3 class="text-center"> Últimos posts:</h3>
+<div class="row">
+	<div class="col-md-12 margin_post">
+	<h3 class="text-center" style="color: #cccccc"> Últimos posts:</h3>
 	<div class="row">
 	{% for post in new_posts %}
-		<div class="col-md-4">
-			<h2>{{ post.title }}</h2>
+		<div class="col-md-4 post_box">
+			<h3>{{ post.title }}</h3>
 			<p>{{ post.introduction }}</p>
 			<p><a class="btn btn-primary" href="/posts/view/{{ post.id }}"> Seguir leyendo »</a></p>
 		</div>
 	{% endfor %}
+	</div>
 	</div>
 </div>
 {% endblock %}
